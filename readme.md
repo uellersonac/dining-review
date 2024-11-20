@@ -1,6 +1,6 @@
 
 # Dining Review
-Projeto de uma API de registro de avaliações de restaurantes. Com esta API é possível realizar a cadastro de usuário e restaurantes, submissão de avaliações e moderação (através do perfil admin). Projeto sugerido na trilha de desenvolvimento Java com JPA da codecademy.com.
+Projeto de uma API de registro de avaliações de restaurantes. Dentre suas funcionalidades está a realização de cadastro de usuários e restaurantes, submissão de avaliações e moderação (através do perfil admin). O projeto é sugestão da trilha de desenvolvimento Java com Spring JPA da codecademy.com.
 
 # Tecnologia
 - **Linguagem:** Java com Spring Framework;
