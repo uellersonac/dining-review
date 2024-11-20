@@ -17,7 +17,7 @@ O ORM mapeará 3 tabelas diferentes:
 - **Restaurant:** representada na classe ```RestaurantModel.java```;
 - **Ratings:** representada na classe ```RatingModel.java```.
 
-<img src="erd-dining-review.png" width=300>
+<img src="erd-dining-review.png" width=400 style="text-align: center;">
 
 As interfaces ```RestaurantModel.java```, ```UserModel.java``` e ```RatingModel.java``` abstraem as operações de consulta ao banco de dados.
 
@@ -25,7 +25,7 @@ As interfaces ```RestaurantModel.java```, ```UserModel.java``` e ```RatingModel.
 # Diagrama de Fluxo de Dados
 Serão utilizados 11 processos (requisições) diferentes:
 
-<img src="dfd-dining-review.png" width=300>
+<img src="dfd-dining-review.png" width=600 style="text-align: center;">
 
 ## Licença
 
