@@ -14,7 +14,7 @@ O ORM mapeará 3 tabelas diferentes:
 - **Restaurant:** representada na classe ```RestaurantModel.java```;
 - **Ratings:** representada na classe ```RatingModel.java```.
 
-<img src="erd-dining-review.png.png" style="transform: scale(0.5);">
+<img src="erd-dining-review.png" style="transform: scale(0.5);">
 
 As interfaces ```RestaurantModel.java```, ```UserModel.java``` e ```RatingModel.java``` abstraem as operações de consulta ao banco de dados.
 
