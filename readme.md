@@ -19,7 +19,7 @@ O ORM mapeará 3 tabelas diferentes:
 
 <img src="erd-dining-review.png" width=400>
 
-As interfaces ```RestaurantModel.java```, ```UserModel.java``` e ```RatingModel.java``` abstraem as operações de consulta ao banco de dados.
+As interfaces ```RestaurantRepository.java```, ```UserRepository.java``` e ```RatingRepository.java``` abstraem as operações de consulta ao banco de dados.
 
 
 # Diagrama de Fluxo de Dados
