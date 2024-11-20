@@ -6,6 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // REPOSITÓRIO DA TABELA "RESTAURANT"
 // =======================================================
 
-public interface RestaurantRepository extends JpaRepository<RestaurantModel, String> {
-  
+public interface RestaurantRepository extends JpaRepository<RestaurantModel, String>{
 }

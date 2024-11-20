@@ -24,7 +24,7 @@ public class RestaurantModel {
     @Id //Define uma PK
     @GeneratedValue(strategy = GenerationType.AUTO) //Gera automaticamente a PK
     @Column //Define a variável como uma coluna da tabela
-    private String id;
+    private Long id;
 
     @Column
     private String name;

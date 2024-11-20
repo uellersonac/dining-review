@@ -1,4 +1,5 @@
 package com.example.dining.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,9 @@ public class UserModel {
 
     @Id //Define uma PK
     @GeneratedValue(strategy = GenerationType.AUTO) //Gera automaticamente a PK
+    @JsonIgnore //Ignora esse campo em POST, já que é automático
     @Column //Define a variável como uma coluna da tabela
-    private String id;
+    private Long id;
 
     @Column
     private String name;
