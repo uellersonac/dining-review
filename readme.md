@@ -27,7 +27,7 @@ Serão utilizados 11 processos (requisições) diferentes:
 
 <img src="dfd-dining-review.png" width=700>
 
-# Exemplos de Uso
+# Acesso
 Caso seja utiliza a porta 8080,
 - Acesso ao Swagger UI: ```http://localhost:8080/swagger-ui/index.html```
 - Acesso ao H2: ```http://localhost:8080/h2```
