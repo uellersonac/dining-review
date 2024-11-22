@@ -11,7 +11,7 @@ import lombok.Setter;
 
 //--------------------------------------------------------
 //USO DO LOMBOK PARA EVITAR BOILERPLATE
-@Getter //Gera automaticamente os getters (getId e getName)
+@Getter //Gera automaticamente os getters (getId, getName etc.)
 @Setter //Gera automaticamente os setters (setId e setName)
 @NoArgsConstructor //Gera automaticamente um construtor vazio public RatingsModel(){}
 //--------------------------------------------------------
@@ -30,7 +30,7 @@ public class UserModel {
     @Column
     private String name;
 
-    @Column
+    @Column(unique = true)
     private String username;
 
     @Column

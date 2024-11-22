@@ -27,10 +27,10 @@ public class RatingModel {
     private Long id;
 
     @Column
-    private String userId;
+    private Long userId;
 
     @Column
-    private String restaurantId;
+    private Long restaurantId;
 
     @Column
     private String rating;

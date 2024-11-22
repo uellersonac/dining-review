@@ -1,23 +1,19 @@
 package com.example.dining.controller;
-
-
-// =======================================================
-// CLASSE QUE CONTROLA AS REQUISIÇÕES REST
-// =======================================================
-
+import com.example.dining.model.RatingModel;
 import com.example.dining.model.UserModel;
 import com.example.dining.repository.RatingRepository;
 import com.example.dining.repository.RestaurantRepository;
 import com.example.dining.repository.UserRepository;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.annotations.tags.Tags;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
+// =======================================================
+// CLASSE QUE CONTROLA AS REQUISIÇÕES REST
+// =======================================================
 
-//DEFININDO SEÇÕES DO SWAGGER
 @RestController //Definindo classe como Controlador de Requisições
 @RequestMapping("/dining-review") //URL principal (raiz) para as requisições
 public class Controller {
@@ -44,29 +40,53 @@ public class Controller {
 //--------------------------------------------------------
 //PROCESSO 1 - POST PERSONAL DATA
 
+    //Anotação Swagger
     @Operation(
-            summary = "Salvar dados pessoais do usuário",
-            description = "Este endpoint salva as informações pessoais do usuário no banco de dados.",
+            summary = "Cadastro de novo usuário",
+            description = "Endpoint usado para cadastrar novo usuário. 'username' é um atributo com restrição de unicidade, não podendo haver usuários com mesmo 'username'",
             tags = {"User Operations"}
     )
     @PostMapping("/post-personal-data")
     public UserModel postUserPersonalData(@RequestBody UserModel userModel){
-        UserModel userModelReturn = this.userRepository.save(userModel);
-        return userModelReturn;
+        return this.userRepository.save(userModel);
     }
 //--------------------------------------------------------
 
 
 //--------------------------------------------------------
 //PROCESSO 2 - GET USER PERSONAL DATA
-    @GetMapping("/get-user-personal-data/{id}")
-    public Optional<UserModel> getUserPersonalData(@PathVariable("id") Long id){
-        return this.userRepository.findById(id);
-    }
 
+    //Anotação Swagger
+    @Operation(
+            summary = "Obter dados de cadastro",
+            description = "Endpoint usado para obter os dados de cadastro de um dado username",
+            tags = {"User Operations"}
+    )
     @GetMapping("/get-user-personal-data-username/{username}")
     public Optional<UserModel> getUserPersonalData(@PathVariable("username") String username){
         return this.userRepository.findByUsername(username);
+    }
+//--------------------------------------------------------
+
+
+//--------------------------------------------------------
+//PROCESSO 3 - GET USER RATINGS
+
+    @Operation(
+            summary = "Obter ratings",
+            description = "Endpoint usado para obter os ratings associados a um dado username",
+            tags = {"User Operations"}
+    )
+    @GetMapping("/get-user-ratings/{username}")
+    public List<RatingModel> getUserRatings(@PathVariable("username") String username){
+        Optional<UserModel> userModel = userRepository.findByUsername(username);
+
+        if(userModel.isPresent()){
+            Long userId = userModel.get().getId();
+            return this.ratingRepository.findByUserId(userId);
+        } else {
+            return List.of();
+        }
     }
 
 }
